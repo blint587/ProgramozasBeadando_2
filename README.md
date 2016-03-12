@@ -5,7 +5,7 @@ Feljegyeztük, hogy egymás követő hétvégeken hány Forintot nyertünk vagy 
 lóversenyen. Volt-e olyan napunk, amikor úgy nyertünk, hogy a megelőző **k** hétvégén
 mindig veszítettünk?
 
-```
+```c++
 int main(){
     return 0;
 }
