@@ -3,5 +3,5 @@ project(programozas_elso_beadando)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES src/main.cpp)
+set(SOURCE_FILES src/main.cpp src/HorseRaceBalance.cpp src/HorseRaceBalance.h)
 add_executable(loverseny ${SOURCE_FILES} )
