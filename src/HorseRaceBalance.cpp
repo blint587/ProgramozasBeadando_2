@@ -23,7 +23,7 @@ double HorseRaceBalance::balance() const {
     return sum;
 }
 
-bool HorseRaceBalance::lost_but_won_after(int const k) const {
+bool HorseRaceBalance::won_affter_loisng_(int const k) const {
     unsigned int count_of_loss = 0;
     bool is_it = false;
 

@@ -11,6 +11,6 @@ int main(){
 
     HorseRaceBalance hr = HorseRaceBalance(s, false);
 
-    cout <<  hr.lost_but_won_after(2) << endl;
+    cout << hr.won_affter_loisng_(2) << endl;
     return 0;
 }
