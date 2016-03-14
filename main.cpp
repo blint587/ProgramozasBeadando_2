@@ -7,6 +7,7 @@ using namespace std;
 
 int main(){
 
+    // TODO: write read in and write out
     vector<double> s = {0.,0.,0.,0.,0.,0.,0.};
 
     HorseRaceBalance hr = HorseRaceBalance(s, false);
