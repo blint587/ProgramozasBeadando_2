@@ -3,7 +3,6 @@
 #include <HorseRaceBalance.h>
 
 
-
 class TestHorseRaceBalance : public testing::Test {
 
 };
