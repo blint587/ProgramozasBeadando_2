@@ -6,6 +6,6 @@ lóversenyen. Volt-e olyan napunk, amikor úgy nyertünk, hogy a megelőző **k*
 mindig veszítettünk?
 
 Probléma:
-A főprogram fordítható mind windows mind linux alapú környzetben gcc fordító programmal.
-Azonban gtest nem fordítható windows alapú környezetben.
-https://github.com/google/googletest/issues/708
+A főprogram fordítható mind windows mind linux alapú környzetben gcc fordítóval.
+Azonban gtest nem fordítható windows alapú környezetben (MinGW 3.20): https://github.com/google/googletest/issues/708.
+Így az 'egyég testek' csak Linux alapú környezetben futtathtók.
