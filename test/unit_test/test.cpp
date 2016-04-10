@@ -36,8 +36,6 @@ TEST_F(TestHorseRaceBalance, test_checking_constructor_inequality){
     EXPECT_EQ(hr1.balance(), hr2.balance());
     EXPECT_NE(hr2.won_affter_loisng_(1), hr1.won_affter_loisng_(1));
 
-
-
 }
 
 

@@ -9,24 +9,27 @@ mindig veszítettünk?
 #include <vector>
 #include "HorseRaceBalance.h"
 #include "read_in/ReadIn.h"
+#include <fstream>
 
 using namespace std;
 
 
 int main(){
 
-    double x = readin(cin, c, "foo\n", false);
+    unsigned  int n;
 
-    cout << x << endl;
+    cin >> n;
 
+    fstream f ("/media/balint/Data1/egyetem/BSc_programtervezo_informatikus/programozas/ProgramozasBeadando_1/test.txt");
+    if (f.is_open()) {
+        auto v = read_in_vector(n, f, c, "", false);
 
+        for (unsigned int i = 0; i < n; ++i) {
+            cout << v[i] << endl;
+        }
 
-//    vector<double> s = {0.,0.,0.,0.,0.,0.,0.};
-//
-//    HorseRaceBalance hr = HorseRaceBalance(s, false);
-//
-//    cout << hr.won_affter_loisng_(2) << endl;
-
+        f.close();
+    }
 
     return 0;
 }
