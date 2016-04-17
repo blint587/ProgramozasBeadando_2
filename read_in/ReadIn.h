@@ -18,39 +18,38 @@ bool c(double){
 }
 
 template<typename T>
-T read_in_one(std::istream &s, bool correct(T), std::string const msg, bool const exit_if_error){
+bool read_in_one(std::istream &s, bool correct(T), std::string const msg, std::vector<T> &out_vector){
     T x;
 
     bool error; // variable which defines if there is an error
     std::string tmp; // temp variable to empty the input stream buffer into if error
 
     do{
+
         std::cout << msg;
         s >> x;
-        error = s.fail() || s.peek() != '\n';
+        if (s.eof()){
+            s.clear();
+            return false;
+        }
+        error = s.fail() || (s.peek() != '\n' && s.peek() != ' ');
         if (error || !correct(x)){
-            if (exit_if_error){
-                // raise some exception
-            }
-            else {
             s.clear();
             getline(s, tmp, '\n');
             std::cout << "incorrect input: " << tmp << std::endl;
-            }
         }
 
     }while (error || !correct(x));
-    return x;
+    out_vector.push_back(x);
+    return !error;
 }
 
 template<typename T>
-std::vector<T> read_in_vector(unsigned int n, std::istream &s, bool correct(T), std::string const msg,
-                              bool const exit_if_error){
-    std::vector<T> v(n);
+std::vector<T> read_in_vector(std::istream &s, bool correct(T), std::string const msg){
+    std::vector<T> v;
 
-    for(unsigned int i = 0; i < n; ++i){
-        v[i] = (read_in_one(s, correct, msg, exit_if_error));
-    }
+    while(read_in_one(s,correct, msg, v));
+
     return v;
 };
 

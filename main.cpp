@@ -9,27 +9,50 @@ mindig veszítettünk?
 #include <vector>
 #include "HorseRaceBalance.h"
 #include "read_in/ReadIn.h"
-#include <fstream>
 
 using namespace std;
+
+vector<double> read_from_file(std::string);
 
 
 int main(){
 
-    unsigned  int n;
+    int input_type;
+    cout << "Please provide what type of input ypu would like to use!\n1. File input.\n2. Console input."
+                    "\nAnything will close the program!" << endl;
+    cin >> input_type;
+    if (1 == input_type){
+        cout << "Please provide the file path!" << endl;
+        string filepath;
+        cin >> filepath;
+        read_from_file(filepath);
 
-    cin >> n;
+    }else if(2 == input_type){
+        cout << "You can start typing the input data!\n"
+                        "If you are finished entering the data press "
+#ifdef WIN32
+        "Ctrl + Z."
+#else
+        "Ctrl + D."
+#endif
+        << endl;
 
-    fstream f ("/media/balint/Data1/egyetem/BSc_programtervezo_informatikus/programozas/ProgramozasBeadando_1/test.txt");
-    if (f.is_open()) {
-        auto v = read_in_vector(n, f, c, "", false);
-
-        for (unsigned int i = 0; i < n; ++i) {
-            cout << v[i] << endl;
-        }
-
-        f.close();
+        read_in_vector(cin, c, "Pleas provide a valid double!\n");
     }
 
+
+    char z;
+    cin >> z;
     return 0;
 }
+
+vector<double> read_from_file(string file_path) {
+    fstream f (file_path.c_str());
+    vector<double> v;
+    if (f.is_open()) {
+        v = read_in_vector(f, c, "");
+        f.close();
+    }
+    return v;
+}
+
