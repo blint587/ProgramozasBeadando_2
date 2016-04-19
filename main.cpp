@@ -11,6 +11,8 @@ mindig veszítettünk?
 #include "HorseRaceBalance.h"
 #include "read_in/ReadIn.h"
 
+#include <sstream>
+
 using namespace std;
 
 vector<double> read_from_file(std::string);
@@ -25,6 +27,7 @@ int main(){
     bool is_zero_a_loss;
     vector<double> balance;
     int k;
+
 
 
     cout << "Please provide what type of input ypu would like to use!\n1. File input.\n2. Console input."

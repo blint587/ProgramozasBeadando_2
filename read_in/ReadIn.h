@@ -5,7 +5,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <sstream>
 #include <istream>
 #include "ReadIn.h"
 #include <vector>
@@ -22,7 +21,7 @@ T read_in(std::istream &s, bool correct(T), std::string const msg){
 
         std::cout << msg;
         s >> x;
-        error = s.fail() || (s.peek() != '\n' && s.peek() != ' ');
+        error = s.fail();
         if (error || !correct(x)){
             s.clear();
             getline(s, tmp, '\n');
