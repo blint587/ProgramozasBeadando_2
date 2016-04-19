@@ -29,7 +29,7 @@ TEST_F(TestHorseRaceBalance, test_checking_constructor_equality){
 
 TEST_F(TestHorseRaceBalance, test_checking_constructor_inequality){
     // by default the constructor initializes the class so that 0 is a loss
-    // if initializeddifferentlyly it should give a different resault
+    // if initialized differentlyt should give a different resault
     std::vector<double> s = {0.,2.,3.};
     HorseRaceBalance hr1 = HorseRaceBalance(s);
     HorseRaceBalance hr2 = HorseRaceBalance(s, false);
@@ -65,7 +65,7 @@ TEST_F(TestHorseRaceBalance, test_initiating_with_list_size_of_one_loss_2){
 }
 
 TEST_F(TestHorseRaceBalance, test_won_affter_loisng__always_lost_1){
-    //
+    //testing with 0s
     std::vector<double> s = {0.,0.,0.,0.};
     HorseRaceBalance hr = HorseRaceBalance(s, true);
     EXPECT_FALSE(hr.won_affter_loisng_(3));

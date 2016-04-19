@@ -10,9 +10,6 @@ HorseRaceBalance::HorseRaceBalance(std::vector<double> & incomes, bool zero_is_a
                                                                                        _zero_is_a_loss(zero_is_a_loss){
 }
 
-HorseRaceBalance::HorseRaceBalance(std::vector<double> & incomes): HorseRaceBalance(incomes, true) {
-}
-
 
 double HorseRaceBalance::balance() const {
 

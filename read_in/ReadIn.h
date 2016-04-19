@@ -10,11 +10,27 @@
 #include "ReadIn.h"
 #include <vector>
 
-// function which determines if the input is correct
-// current task indicates no limitation to the input
 
-bool c(double){
-    return true;
+template<typename T>
+T read_in(std::istream &s, bool correct(T), std::string const msg){
+    T x;
+
+    bool error; // variable which defines if there is an error
+    std::string tmp; // temp variable to empty the input stream buffer into if error
+
+    do{
+
+        std::cout << msg;
+        s >> x;
+        error = s.fail() || (s.peek() != '\n' && s.peek() != ' ');
+        if (error || !correct(x)){
+            s.clear();
+            getline(s, tmp, '\n');
+            std::cout << "Incorrect input: " << tmp <<  " Please try again!" << std::endl;
+        }
+
+    }while (error || !correct(x));
+    return x;
 }
 
 template<typename T>
@@ -36,7 +52,7 @@ bool read_in_one(std::istream &s, bool correct(T), std::string const msg, std::v
         if (error || !correct(x)){
             s.clear();
             getline(s, tmp, '\n');
-            std::cout << "incorrect input: " << tmp << std::endl;
+            std::cout << "Incorrect input: " << tmp << std::endl;
         }
 
     }while (error || !correct(x));

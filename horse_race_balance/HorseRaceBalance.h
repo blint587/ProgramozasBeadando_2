@@ -17,8 +17,7 @@ class HorseRaceBalance {
 
     public:
         //default initializer, sets the _zero_is_a_loss to true
-        HorseRaceBalance(std::vector<double>&);
-        HorseRaceBalance(std::vector<double>&, bool);
+        HorseRaceBalance(std::vector<double>&, bool zero_is_a_loss=true);
 
         // gives bak the current balance
         double balance() const;
