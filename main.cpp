@@ -7,7 +7,9 @@ mindig veszítettünk?
 
 #include <iostream>
 #include <vector>
-#include <conio.h>
+#ifdef WIN32
+    #include <conio.h>
+#endif
 #include "HorseRaceBalance.h"
 #include "read_in/ReadIn.h"
 
@@ -63,8 +65,11 @@ int main(){
     string aw = (hbalance.won_affter_loisng_(k) == 1) ? "yes" : "no";
     cout << aw << endl;
 
-    cerr << "\nPleas press a key to exit..." << endl;
+
+#ifdef WIN32
+    cout << "\nPleas press a key to exit..." << endl;
     getch();
+#endif
     return 0;
 }
 
