@@ -1,9 +1,19 @@
-# Programozas első beadandó
+# Programozas második beadandó
 
 ## Feladat:
-Feljegyeztük, hogy egymás követő hétvégeken hány Forintot nyertünk vagy veszítettünk a
-lóversenyen. Volt-e olyan napunk, amikor úgy nyertünk, hogy a megelőző **k** hétvégén
-mindig veszítettünk?
+Egy vállalat portaszolgálatán feljegyzik a belépő és kilépő személyek adatait.
+Belépéskor rögzítik az aktuális időpontot, a belépő nevét és azonosítására szolgáló
+igazolványszámot, távozáskor pedig a fenti három adat mellé kerül a kilépés
+időpontja. A napi adatokat azonosító szerint, azon belül belépési idő szerint
+növekvően rendezve egy szöveges állományban tárolják. Feltehetjük, hogy az
+állomány helyesen van kitöltve, annak egy sorában három vagy négy olyan sztringet
+találunk, amelyeknek belsejében nincs elválasztó jel, ugyanakkor tetszőleges számú
+elválasztó jel határolja azokat.
+Listázza ki a hibás sorait az állománynak (azokat a sorokat, ahol egy olyan
+személy belépését regisztrálták, aki még nem távozott) és számolja meg azokat a
+személyeket, akik jelenleg benn vannak a vállalatnál (beléptek, de még nem
+távoztak)
+
 
 Probléma:
 A főprogram fordítható mind windows mind linux alapú környzetben GCC fordítóval.
