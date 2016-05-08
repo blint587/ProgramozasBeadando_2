@@ -7,18 +7,32 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <exception>
+#include "../BaseClass.h"
 
-class DateTime {
+class DateTime: public BaseClass {
+
+public: // custom exceptions
+    class DateTimeInitializationException: public std::exception{
+        virtual const char* what() const throw()
+        {
+            return "Incorrect Date Time format";
+        }
+    };
 
     private:
+
         int time_in_min = -1;
         friend bool operator<(DateTime const &d1 , DateTime const &d2 ){return d1.time_in_min < d2.time_in_min;}
     public:
         DateTime(const char*);
-        ~DateTime(){};
-        std::string toString() const;
+        virtual ~DateTime(){};
+        virtual std::string toString() const;
+        bool isvalid() const { return time_in_min > 0;};
+
 
 };
+
 
 inline bool operator==( DateTime const &d1 , DateTime const &d2 ) { return !(d1<d2 || d2<d1); }
 inline bool operator!=( DateTime const &d1 , DateTime const &d2 ) { return d1<d2 || d2<d1; }

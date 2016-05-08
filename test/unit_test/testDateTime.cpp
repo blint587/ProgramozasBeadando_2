@@ -9,6 +9,10 @@ TEST_F(TestDateTime, testing_constructir){
     EXPECT_EQ("18:45", d.toString());
 }
 
+TEST_F(TestDateTime, testing_constructir_fails){
+    EXPECT_THROW(DateTime("1845"), DateTime::DateTimeInitializationException);
+}
+
 TEST_F(TestDateTime, testing_lt){
     DateTime d1 = DateTime("18:45");
     DateTime d2 = DateTime("17:45");
@@ -61,15 +65,18 @@ TEST_F(TestDateTime, testing_ge_greater){
 TEST_F(TestDateTime, testing_ge_equal){
     DateTime d1 = DateTime("18:45");
     DateTime d2 = DateTime("18:45");
-
     EXPECT_TRUE(d1 >= d2);
 }
 
-TEST_F(TestDateTime, testing_type_convert_){
+TEST_F(TestDateTime, testing_compare_false){
     DateTime d1 = DateTime("18:45");
     DateTime d2 = DateTime("18:45");
+    EXPECT_FALSE(d1 < d2);
+}
 
-    EXPECT_TRUE(d1 >= d2);
+TEST_F(TestDateTime, testing_type_cast_and_compare){
+    DateTime d2 = DateTime("18:45");
+    EXPECT_TRUE("19:45" >= d2);
 }
 
 

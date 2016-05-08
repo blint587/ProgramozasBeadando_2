@@ -3,12 +3,14 @@ project(programozas_elso_beadando)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 
-set(SOURCE_FILES main.cpp read_in/ReadIn.h)
+set(SOURCE_FILES main.cpp read_in/ReadIn.h BaseClass.cpp BaseClass.h)
 add_executable(reception ${SOURCE_FILES})
 
 include_directories(DateTime)
+include_directories(Entry)
 
 add_subdirectory(DateTime)
+add_subdirectory(Entry)
 add_subdirectory(test)
 
-target_link_libraries(reception datetime)
+target_link_libraries(reception datetime entry)
