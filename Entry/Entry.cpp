@@ -4,6 +4,6 @@
 std::string Entry::toString() const{
     std::stringstream ss;
 
-    std::cout << enter << " " << name << " " << id << " " << (leave.isvalid()? leave.toString():"");
+    ss << enter.toString() << " " << name << " " << id << " " << (leave.isvalid()?leave.toString():"");
     return ss.str();
 }

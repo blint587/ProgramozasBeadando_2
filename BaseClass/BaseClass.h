@@ -1,0 +1,14 @@
+//
+// Created by KlingonW on 2016-05-08.
+//
+
+#ifndef PROGRAMOZAS_ELSO_BEADANDO_BASECLASS_H
+#define PROGRAMOZAS_ELSO_BEADANDO_BASECLASS_H
+
+
+class BaseClass {
+
+};
+
+
+#endif //PROGRAMOZAS_ELSO_BEADANDO_BASECLASS_H
