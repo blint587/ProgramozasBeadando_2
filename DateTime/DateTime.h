@@ -8,8 +8,9 @@
 #include <string>
 #include <sstream>
 #include <exception>
+#include <BaseClass.h>
 
-class DateTime {
+class DateTime: public BaseClass {
 
 public: // custom exceptions
     class DateTimeInitializationException: public std::exception{
@@ -24,6 +25,7 @@ public: // custom exceptions
         int time_in_min = -1;
         friend bool operator<(DateTime const &d1 , DateTime const &d2 ){return d1.time_in_min < d2.time_in_min;}
     public:
+        DateTime(){};
         DateTime(const char *);
         virtual ~DateTime(){};
         virtual std::string toString() const;

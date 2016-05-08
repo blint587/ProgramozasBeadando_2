@@ -9,7 +9,7 @@
 #include "../BaseClass/BaseClass.h"
 #include <string>
 
-class Entry{
+class Entry: public BaseClass{
 
     private:
         DateTime enter;
@@ -19,12 +19,12 @@ class Entry{
 
 
     public:
-        virtual ~Entry(){
-        };
+        virtual ~Entry(){};
+        Entry(){};
         Entry(std::string ent, std::string name, std::string id, std::string leave=""):enter(ent.c_str()), name(name),
                                                                                     id(id), leave(leave.c_str()){
         };
-        std::string toString() const;
+        virtual std::string toString() const;
 };
 
 

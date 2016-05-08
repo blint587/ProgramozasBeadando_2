@@ -1,13 +1,13 @@
 #include "EntryLister.h"
 
 EntryLister::EntryLister(const char * fp):f(fp) {
-    read(First);
-    read(Second);
+    First = read();
+    Second = read();
 }
 
 EntryLister::EntryLister(std::string fp):EntryLister::EntryLister(fp.c_str()){}
 
-void EntryLister::read(shared_ptr<Entry> E) {
+Entry EntryLister::read() {
     string buffer;
     std::stringstream ss;
     getline(f, buffer, '\n');
@@ -19,7 +19,7 @@ void EntryLister::read(shared_ptr<Entry> E) {
     ss >> s2;
     ss >> s3;
     ss >> s4;
-    E = make_shared<Entry>(Entry(s1, s2, s3, s4));
+    return Entry(s1, s2, s3, s4);
 }
 
 

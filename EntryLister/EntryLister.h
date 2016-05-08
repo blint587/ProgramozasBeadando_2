@@ -12,24 +12,26 @@
 
 using namespace std;
 
-class EntryLister {
+class EntryLister: public BaseClass {
     private:
         std::ifstream f;
-        void read(shared_ptr<Entry>);
+        Entry read();
 
     public:
-        shared_ptr<Entry> First;
-        shared_ptr<Entry> Second;
+        Entry First;
+        Entry Second;
 
         EntryLister(const char *);
         EntryLister(std::string);
-        virtual ~EntryLister(){
-            f.close();
+        virtual ~EntryLister(){f.close();}
+
+        virtual string toString() const{
+            return First.toString() + " " +Second.toString();
         }
 
         void next() {
             First = Second;
-            read(Second);
+            Second = read();
         }
         bool end() const {return f.eof();};
 

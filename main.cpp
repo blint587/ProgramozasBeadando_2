@@ -12,7 +12,7 @@ int main(){
     EntryLister el("F:\\egyetem\\BSc_programtervezo_informatikus\\programozas\\ProgramozasBeadando_2\\ProgramozasBeadando_2\\test.txt");
 
     for(; !el.end(); el.next()){
-        cerr <<el.First.toString()<< "..|., "<< el.Second.toString() << endl;
+        cerr << el << endl;
     }
 
 
