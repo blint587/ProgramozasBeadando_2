@@ -1,7 +1,3 @@
-//
-// Created by KlingonW on 2016-05-08.
-//
-
 #ifndef PROGRAMOZAS_ELSO_BEADANDO_ENTRYLISTER_H
 #define PROGRAMOZAS_ELSO_BEADANDO_ENTRYLISTER_H
 
@@ -17,16 +13,17 @@ class EntryLister: public BaseClass {
         std::ifstream f;
         Entry read();
 
+    //TODO: convert to smart pointers
     public:
         Entry First;
         Entry Second;
-
+        //TODO: Check if file is open
         EntryLister(const char *);
         EntryLister(std::string);
         virtual ~EntryLister(){f.close();}
 
         virtual string toString() const{
-            return First.toString() + " " +Second.toString();
+            return First.toString() + " - " +Second.toString();
         }
 
         void next() {
