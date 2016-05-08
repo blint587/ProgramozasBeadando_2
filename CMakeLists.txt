@@ -4,11 +4,11 @@ project(programozas_elso_beadando)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 
 set(SOURCE_FILES main.cpp read_in/ReadIn.h)
-add_executable(horserace ${SOURCE_FILES})
+add_executable(reception ${SOURCE_FILES})
 
-#include_directories(horse_race_balance)
+include_directories(DateTime)
 
-#add_subdirectory(horse_race_balance)
+add_subdirectory(DateTime)
 add_subdirectory(test)
 
-#target_link_libraries(horserace horse_race_balance)
+target_link_libraries(reception datetime)
