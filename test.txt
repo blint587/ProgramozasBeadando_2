@@ -1,5 +1,4 @@
 10:30 Gipsz_Jakab 1234567A 10:45
-10:45 Gipsz_Jakab 1234567A 11:30
 08:35 Gyanus_Moric 1x1x1x1x1x
 08:35 Gyanus_Moric 1x1x1x1x1x 08:10
 08:35 Gyanus_Moric 1x1x1x1x1x
@@ -8,3 +7,9 @@
 08:45 Szer_Elek 33332222
 08:45 Szer_Elek 33332222 09:15
 08:45 Szer_Elek 33332222 09:15
+14:15 valaki_mas 65465468
+14:15 valaki_mas 65465468 15:17
+14:15 valaki_mas 65465468
+10:15 huly_gyerek 4444444
+10:15 huly_gyerek 4444444 15:15
+10:15 huly_gyerek 4444444 15:15

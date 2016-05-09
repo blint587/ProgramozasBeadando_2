@@ -15,18 +15,19 @@ int main(){
     int count = 0;
     EntryLister el(f);
 
-    if(el.isTheSame()){
-        if(el.getFirst().get()->getLeave().isvalid() && el.getSecond().get()->getLeave().isvalid()) {
-            cout << el.linecount - 1 << " " << el.getFirst().get()->toString() << endl;
-            cout << el.linecount << " " << el.getSecond().get()->toString() << endl;
-        }
+    if(el.getFirst().get()->getLeave().isvalid()){
+        cout << el.linecount-1  << " " << el.getFirst().get()->toString() << endl;
     }
 
-    el.next();
-    for(;!el.end(); el.next()){
+    for(;!el.end();el.next()){
+
         if(el.isTheSame()){
             if(el.getFirst().get()->getLeave().isvalid() && el.getSecond().get()->getLeave().isvalid()){
                 cout << el.linecount << " " << el.getSecond().get()->toString() << endl;
+            }else if (!el.getFirst().get()->getLeave().isvalid() && el.getSecond().get()->getLeave().isvalid()){
+                ++count;
+            }else if (el.getFirst().get()->getLeave().isvalid() && !el.getSecond().get()->getLeave().isvalid()){
+                --count;
             }
         }
         else if((!el.isTheSame() && el.getSecond().get()->getLeave().isvalid())){
