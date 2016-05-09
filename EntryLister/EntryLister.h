@@ -13,23 +13,25 @@ class EntryLister: public BaseClass {
         std::ifstream f;
         Entry read();
 
-    //TODO: convert to smart pointers
+
+
+
+    private:
+        unique_ptr<Entry> First;
+        unique_ptr<Entry> Second;
+
     public:
-        Entry First;
-        Entry Second;
-        //TODO: Check if file is open
         EntryLister(const char *);
         EntryLister(std::string);
-        virtual ~EntryLister(){f.close();}
 
-        virtual string toString() const{
-            return First.toString() + " - " +Second.toString();
-        }
+        const unique_ptr<Entry> &getFirst() const {return First;}
+        const unique_ptr<Entry> &getSecond() const {return Second;}
 
-        void next() {
-            First = Second;
-            Second = read();
-        }
+
+    virtual ~EntryLister(){f.close();}
+        virtual string toString() const;
+
+        void next();
         bool end() const {return f.eof();};
 
 };

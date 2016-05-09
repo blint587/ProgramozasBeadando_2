@@ -1,8 +1,8 @@
 #include "EntryLister.h"
 
 EntryLister::EntryLister(const char * fp):f(fp) {
-    First = read();
-    Second = read();
+    First = make_unique<Entry>(read());
+    Second = make_unique<Entry>(read());
 }
 
 EntryLister::EntryLister(std::string fp):EntryLister::EntryLister(fp.c_str()){}
@@ -22,7 +22,13 @@ Entry EntryLister::read() {
     return Entry(s1, s2, s3, s4);
 }
 
+string EntryLister::toString() const{
+    return this->First.get()->toString() + " - " + this->Second.get()->toString();
+}
 
-
+void EntryLister::next(){
+    First = move(Second);
+    Second = make_unique<Entry>(read());
+}
 
 
