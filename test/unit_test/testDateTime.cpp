@@ -1,9 +1,11 @@
-#include "gtest/gtest.h"
 #include "DateTime.h"
+
+#include "gtest/gtest.h"
 
 class TestDateTime: public testing::Test{
 
 };
+
 TEST_F(TestDateTime, testing_constructir){
     DateTime d = DateTime("18:45");
     EXPECT_EQ("18:45", d.toString());
@@ -79,4 +81,8 @@ TEST_F(TestDateTime, testing_type_cast_and_compare){
     EXPECT_TRUE("19:45" >= d2);
 }
 
-
+int main(int argc, char* argv[])
+{
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
