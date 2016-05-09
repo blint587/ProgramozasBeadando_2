@@ -36,6 +36,6 @@ class Entry: public BaseClass{
         const DateTime &getLeave() const {return leave;}
 
 };
-
+inline bool operator== (Entry & e1, Entry & e2){ return e1.getId() == e2.getId();}
 
 #endif
