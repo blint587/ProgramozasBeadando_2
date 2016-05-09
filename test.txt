@@ -12,6 +12,6 @@
 14:15 valaki_mas 65465468
 14:15 valaki_mas 65465468 15:17
 14:15 valaki_mas 65465468
-10:15 huly_gyerek 4444444
-10:15 huly_gyerek 4444444 15:15
-10:15 huly_gyerek 4444444 15:15
+10:15 hulye_gyerek 4444444
+10:15 hulye_gyerek 4444444 15:15
+10:15 hulye_gyerek 4444444 15:15
