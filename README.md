@@ -14,6 +14,9 @@ személy belépését regisztrálták, aki még nem távozott) és számolja meg
 személyeket, akik jelenleg benn vannak a vállalatnál (beléptek, de még nem
 távoztak)
 
+Megjegyzés:
+Hibás az a sor ahhol olyan ember távozását regisztrálják akinek nincs regisztrált belépése.
+
 
 Probléma:
 A főprogram fordítható mind windows mind linux alapú környzetben GCC fordítóval.

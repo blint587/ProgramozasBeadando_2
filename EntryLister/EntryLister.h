@@ -5,34 +5,32 @@
 #include <fstream>
 #include "Entry.h"
 #include <iostream>
+#include <istream>
+#include <string>
 
 using namespace std;
 
 class EntryLister: public BaseClass {
     private:
-        std::ifstream f;
+        istream *f ;
         Entry read();
-
-
-
-
-    private:
         unique_ptr<Entry> First;
         unique_ptr<Entry> Second;
-
     public:
-        EntryLister(const char *);
-        EntryLister(std::string);
 
-        const unique_ptr<Entry> &getFirst() const {return First;}
-        const unique_ptr<Entry> &getSecond() const {return Second;}
+        int linecount = 0; // move to private and implement getter
+        EntryLister(istream&);
+        const unique_ptr<Entry> & getFirst() const {return First;}
+        const unique_ptr<Entry> & getSecond() const {return Second;}
+
+        bool isTheSame() const;
 
 
-    virtual ~EntryLister(){f.close();}
+        virtual ~EntryLister(){};
         virtual string toString() const;
 
         void next();
-        bool end() const {return f.eof();};
+        bool end() const {return f->eof();};
 
 };
 

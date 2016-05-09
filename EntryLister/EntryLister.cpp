@@ -1,34 +1,46 @@
 #include "EntryLister.h"
 
-EntryLister::EntryLister(const char * fp):f(fp) {
+EntryLister::EntryLister( istream & is) {
+
+    f = &is;
+
     First = make_unique<Entry>(read());
     Second = make_unique<Entry>(read());
 }
 
-EntryLister::EntryLister(std::string fp):EntryLister::EntryLister(fp.c_str()){}
 
 Entry EntryLister::read() {
     string buffer;
     std::stringstream ss;
-    getline(f, buffer, '\n');
-//    std::cout << buffer << endl;
+    getline(*f, buffer, '\n');
 
     ss << buffer;
-    std::string s1, s2, s3, s4;
-    ss >> s1;
-    ss >> s2;
-    ss >> s3;
-    ss >> s4;
-    return Entry(s1, s2, s3, s4);
+    const int n = 4;
+    std::string s [n];
+    for(int i = 0; i < n; ++i ){
+        ss >> s[i];
+        if(ss.fail()){
+            // throw exception
+        }
+    }
+    ++linecount;
+    return Entry(s[0], s[1], s[2], s[3]);
 }
 
 string EntryLister::toString() const{
-    return this->First.get()->toString() + " - " + this->Second.get()->toString();
+    return to_string(linecount) + this->First.get()->toString() + " - " + this->Second.get()->toString();
 }
 
 void EntryLister::next(){
     First = move(Second);
     Second = make_unique<Entry>(read());
 }
+
+bool EntryLister::isTheSame() const {
+    return First.get()->getId() == Second.get()->getId();
+}
+
+
+
 
 
