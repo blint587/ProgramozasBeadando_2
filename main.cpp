@@ -6,7 +6,7 @@
 using namespace std;
 
 
-
+//TODO: csak_belepot megszamolni
 int main(){
 
     auto f = ifstream("F:\\egyetem\\BSc_programtervezo_informatikus\\programozas\\ProgramozasBeadando_2\\ProgramozasBeadando_2\\test.txt");
