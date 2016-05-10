@@ -37,46 +37,48 @@ int main(int argc, char* argv[]){
         auto e = read(f);
         if (e.getLeave().isvalid()){
             if (!s.pop(e)) {
-                cerr << e << endl;
+                cout << e << endl;
             }
         }else{
             if (s.push(e)){
-                cerr << e << endl;
+                cout << e << endl;
             };
         }
     }
-    cout << s.toString() << endl;
+    cout << s.toString() << endl << endl;
+    f.close();
 
 
 
-//    int count = 0;
-//    EntryLister el(f);
-//
-//    if(el.getFirst().get()->getLeave().isvalid()){
-//        cout << el.linecount-1  << " " << el.getFirst().get()->toString() << endl;
-//    }
-//
-//    for(;!el.end();el.next()){
-//        if(!el.getSecond().get()->getLeave().isvalid()){
-//            ++count;
-//        }
-//        if(el.isTheSame()){
-//            if(el.getFirst().get()->getLeave().isvalid() && el.getSecond().get()->getLeave().isvalid()){
-//                cout << el.linecount << " " << el.getSecond().get()->toString() << endl;
-//            }
-//            else if (el.getSecond().get()->getLeave().isvalid()){
-//                --count;
-//            }
-//        }
-//        else if((!el.isTheSame())){
-//            if (el.getSecond().get()->getLeave().isvalid()) {
-//                cout << el.linecount << " " << el.getSecond().get()->toString() << endl;
-//            }
-//        }
-//    }
-//    cout << count << endl;
-//
-//    f.close();
+    int count = 0;
+    f = ifstream(fp);
+    EntryLister el(f);
+
+    if(el.getFirst().get()->getLeave().isvalid()){
+        cout << el.linecount-1  << " " << el.getFirst().get()->toString() << endl;
+    }
+
+    for(;!el.end();el.next()){
+        if(!el.getSecond().get()->getLeave().isvalid()){
+            ++count;
+        }
+        if(el.isTheSame()){
+            if(el.getFirst().get()->getLeave().isvalid() && el.getSecond().get()->getLeave().isvalid()){
+                cout << el.linecount << " " << el.getSecond().get()->toString() << endl;
+            }
+            else if (el.getSecond().get()->getLeave().isvalid()){
+                --count;
+            }
+        }
+        else if((!el.isTheSame())){
+            if (el.getSecond().get()->getLeave().isvalid()) {
+                cout << el.linecount << " " << el.getSecond().get()->toString() << endl;
+            }
+        }
+    }
+    cout << count << endl;
+
+    f.close();
 
 
     return 0;
