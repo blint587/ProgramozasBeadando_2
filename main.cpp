@@ -25,13 +25,13 @@ Entry read(ifstream & f) {
 
 
 //TODO: csak_belepot megszamolni
-int main(){
+int main(int argc, char* argv[]){
 
+    string fp = argv[argc-1];
 
-
-
-    auto f = ifstream("F:\\egyetem\\BSc_programtervezo_informatikus\\programozas\\ProgramozasBeadando_2\\ProgramozasBeadando_2\\test.txt");
     auto s = SET<Entry>();
+
+    auto f = ifstream(fp);
 
     while(!f.eof()){
         auto e = read(f);
