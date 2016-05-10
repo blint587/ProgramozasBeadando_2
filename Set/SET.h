@@ -6,6 +6,7 @@
 #define PROGRAMOZAS_ELSO_BEADANDO_SET_H
 
 #include <vector>
+#include <sstream>
 
 
 template <typename T>
@@ -55,7 +56,7 @@ class SET {
         };
 
         std::string toString(){
-            stringstream ss;
+            std::stringstream ss;
             ss << "[ ";
             for(auto i = s.begin(); i < s.end(); i++){
                 ss << *i << ", ";
