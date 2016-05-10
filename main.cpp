@@ -6,25 +6,19 @@
 using namespace std;
 
 
-//TODO: csak_belepot megszamolni
+
 int main(int argc, char* argv[]){
 
     string fp = argv[argc-1];
     auto f = ifstream(fp); // acquiring resource
 
-    Reception r(f);
-
-    cout << r.wrong_entrys() << endl;
-
-    cout << r.nr_people_in() << endl;
-
+    if (f.is_open()){
+        Reception r(f); // initiating solution object
+        cout << r.wrong_entrys() << endl; // writing out result one
+        cout << r.nr_people_in() << endl; //writing out result two
+    }
 
     f.close(); // releasing resource
-
-
-
-
-
 
     return 0;
 }

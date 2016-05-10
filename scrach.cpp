@@ -1,5 +1,5 @@
 #include "EntryLister.h"
-
+//TODO: csak_belepot megszamolni
 
 int count = 0;
 f = ifstream(fp);
