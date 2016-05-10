@@ -8,7 +8,7 @@ class TestReception: public testing::Test{
 
 TEST_F(TestReception, simple_check){
     std::stringstream f;
-//
+
     f << "10:30 Gipsz_Jakab 1234567A 10:45\n"
          "08:35 Gyanus_Moric 1x1x1x1x1x\n"
          "08:35 Gyanus_Moric 1x1x1x1x1x 08:10\n"
@@ -28,9 +28,8 @@ TEST_F(TestReception, simple_check){
          "10:15 h_gy 4444444 15:15\n"
          "10:15 h_gy 4444444 15:15";
 
-
     Reception r = Reception(f);
-//
+
     EXPECT_EQ(3,r.nr_people_in());
     EXPECT_EQ("1 10:30 Gipsz_Jakab 1234567A 10:45\n9 8:45 Szer_Elek 33332222 9:15\n10 20:15 csak_tavozo 45879 20:15\n12 20:15 csak_belepo 45872\n18 10:15 h_gy 4444444 15:15\n",
               r.wrong_entrys());
