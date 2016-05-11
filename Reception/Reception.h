@@ -3,7 +3,7 @@
 #define PROGRAMOZAS_ELSO_BEADANDO_RECEPTION_H
 
 
-#include <c++/sstream>
+#include <sstream>
 #include <Entry.h>
 #include <fstream>
 #include <iostream>
