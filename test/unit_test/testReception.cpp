@@ -23,7 +23,7 @@ TEST_F(TestReception, midle_of_the_series){
               r.wrong_entrys());
 }
 
-TEST_F(TestReception, one_elemnt){
+TEST_F(TestReception, one_element){
     std::stringstream f;
 
     f << "08:35 Gyanus_Moric 1x1x1x1x1x\n";
@@ -95,6 +95,20 @@ TEST_F(TestReception, no_entries_to_find){
     EXPECT_EQ("[\n]",
               r.wrong_entrys());
 }
+
+TEST_F(TestReception, empty_input){
+    std::stringstream f;
+
+
+    f <<  "";
+
+    Reception r = Reception(f);
+
+    EXPECT_EQ(0, r.nr_people_in());
+    EXPECT_EQ("[\n]",
+              r.wrong_entrys());
+}
+
 
 
 

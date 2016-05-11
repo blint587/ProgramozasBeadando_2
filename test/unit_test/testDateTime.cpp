@@ -5,7 +5,7 @@ class TestDateTime: public testing::Test{
 
 };
 
-TEST_F(TestDateTime, testing_constructir){
+TEST_F(TestDateTime, testing_constructor){
     DateTime d = DateTime("18:45");
     EXPECT_EQ("18:45", d.toString());
 }
