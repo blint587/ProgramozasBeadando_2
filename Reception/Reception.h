@@ -14,7 +14,6 @@ class Reception {
 
 private:
     std::unique_ptr<Entry> current;
-    std::stringstream results;
     SET<Entry> s = SET<Entry>();
     void read(std::istream &f);
 

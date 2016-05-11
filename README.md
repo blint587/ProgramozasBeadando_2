@@ -23,41 +23,6 @@ személy belépését regisztrálták, aki még nem távozott) és számolja meg
 személyeket, akik jelenleg benn vannak a vállalatnál (beléptek, de még nem
 távoztak)
 
-Entry:
-    DateTime enter
-    string name
-    string id
-    DateTime leave
-
-
-A = (x: Entry*, n:N, y: Entry*, be:{}, ki:{})
-
-Ef = (x = x', x: ↑)
-
-Uf =( be = ⊕ <e> & ki = ⊕ <e> → y = be \ ki → n = |y|
-          e∊x'         e∊x'
-        belepes(e)  kilepes(e))
-
-belepes(e):=
- ___________________________________________________
-|                                                   |
-|                   x.First()                       |
-|___________________________________________________|
-|                                                   |
-|                                                   |
-|    _______________________________________________|
-|   |                                               |
-|   |                                               |
-|   |                                               |
-|   |                                               |
-|   |                                               |
-|   |                                               |
-|   |                                               |
-|   |                                               |
-|   |                                               |
-|   |                                               |
-|___|_______________________________________________|
-
 
 
 
