@@ -7,14 +7,16 @@
 #include <Entry.h>
 #include <fstream>
 #include <iostream>
+#include <memory>
 #include <SET.h>
 
 class Reception {
 
 private:
+    std::unique_ptr<Entry> current;
     std::stringstream results;
     SET<Entry> s = SET<Entry>();
-    Entry read(std::istream &f);
+    void read(std::istream &f);
 
 public:
     Reception(std::istream & instr);

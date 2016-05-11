@@ -14,7 +14,7 @@ TEST_F(TestReception, midle_of_the_series){
          "08:35 Gyanus_Moric 1x1x1x1x1x 08:45\n"
          "08:55 Gyanus_Moric 1x1x1x1x1x\n"
          "08:45 Szer_Elek 33332222\n"
-         "08:45 Szer_Elek 33332222 09:15";
+         "08:45 Szer_Elek 33332222 09:15\n";
 
     Reception r = Reception(f);
 
@@ -26,7 +26,7 @@ TEST_F(TestReception, midle_of_the_series){
 TEST_F(TestReception, one_elemnt){
     std::stringstream f;
 
-    f << "08:35 Gyanus_Moric 1x1x1x1x1x";
+    f << "08:35 Gyanus_Moric 1x1x1x1x1x\n";
 
 
     Reception r = Reception(f);
@@ -41,7 +41,7 @@ TEST_F(TestReception, beginig_of_the_list){
 
     f << "08:35 Gyanus_Moric 1x1x1x1x1x\n"
          "08:45 Valaki_Mas aaaaaaa\n"
-         "08:45 Valaki_Mas aaaaaaa 17:45";
+         "08:45 Valaki_Mas aaaaaaa 17:45\n";
 
 
     Reception r = Reception(f);
@@ -57,7 +57,7 @@ TEST_F(TestReception, end_of_the_list){
 
     f <<    "08:45 Valaki_Mas aaaaaaa\n"
             "08:45 Valaki_Mas aaaaaaa 17:45\n"
-            "08:35 Gyanus_Moric 1x1x1x1x1x";
+            "08:35 Gyanus_Moric 1x1x1x1x1x\n";
 
     Reception r = Reception(f);
 
@@ -73,7 +73,7 @@ TEST_F(TestReception, multimple_entries_to_find){
     f <<    "08:45 Valaki_Mas aaaaaaa\n"
             "08:45 Valaki_Mas aaaaaaa 17:45\n"
             "08:35 Gyanus_Moric 1x1x1x1x1x\n"
-            "04:45 Koran_Kelo ccccccccc";
+            "04:45 Koran_Kelo ccccccccc\n";
 
     Reception r = Reception(f);
 
@@ -87,7 +87,7 @@ TEST_F(TestReception, no_entries_to_find){
 
 
     f <<    "08:45 Valaki_Mas aaaaaaa\n"
-            "08:45 Valaki_Mas aaaaaaa 17:45";
+            "08:45 Valaki_Mas aaaaaaa 17:45\n";
 
     Reception r = Reception(f);
 

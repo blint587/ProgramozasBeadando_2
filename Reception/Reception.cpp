@@ -1,6 +1,6 @@
 #include "Reception.h"
 
-Entry Reception::read(std::istream &f) {
+void Reception::read(std::istream &f) {
     std::string buffer;
     std::stringstream ss;
     getline(f, buffer, '\n');
@@ -14,17 +14,19 @@ Entry Reception::read(std::istream &f) {
             // throw exception
         }
     }
-    return Entry(s[0], s[1], s[2], s[3]);
+    current = std::make_unique<Entry>(s[0], s[1], s[2], s[3]);
 }
 
-Reception::Reception(std::istream &instr) {
-    while (!instr.eof()) {
-        auto e = read(instr);
-        if (e.getLeave().isvalid()) {
-            s.pop(e);
+Reception::Reception(std::istream &instr) { // abstraction of First
+    read(instr); // abstraction of First
+    while (!instr.eof()) { // abstraction of End
+
+        if (this->current.get()->getLeave().isvalid()) {
+            s.pop(*this->current.get());
         }
         else {
-            s.push(e);
+            s.push(*this->current.get());
         }
+        read(instr); // abstraction of Next
     }
 }
