@@ -22,11 +22,9 @@ class Entry: public BaseClass{
 
     public:
         virtual ~Entry(){
-//            std::cout << "Destructing: " << toString() << std::endl;
         };
         Entry(std::string ent, std::string name, std::string id, std::string leave=""):enter(ent.c_str()), name(name),
                                                                                     id(id), leave(leave.c_str()){
-//        std::cout << "Constructing: " << toString() << std::endl;
         };
         virtual std::string toString() const;
 
@@ -36,6 +34,8 @@ class Entry: public BaseClass{
         const DateTime &getLeave() const {return leave;}
 
 };
-inline bool operator== (Entry & e1, Entry & e2){ return e1.getId() == e2.getId();}
+inline bool operator== (Entry & e1, Entry & e2){ return e1.getId() == e2.getId()
+                                                        && e1.getEnter() == e2.getEnter()
+                                                        && e1.getName() == e2.getName();}
 
 #endif

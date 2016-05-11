@@ -20,6 +20,7 @@ DateTime::DateTime(const char * s) {
 
 std::string DateTime::toString() const {
     std::stringstream s;
-    s << time_in_min/60 << ':' << time_in_min%60;
+    int hours = time_in_min/60;
+    s << (hours < 10?"0":"") << hours << ':' << time_in_min%60;
     return s.str();
 }

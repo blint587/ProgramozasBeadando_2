@@ -50,16 +50,15 @@ class SET {
             return i > -1;
         };
 
-
         int size(){
             return s.size();
         };
 
         std::string toString(){
             std::stringstream ss;
-            ss << "[ ";
+            ss << "[\n";
             for(auto i = s.begin(); i < s.end(); i++){
-                ss << *i << ", ";
+                ss << *i << "\n";
             }
             ss << "]";
             return ss.str();

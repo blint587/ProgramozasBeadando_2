@@ -14,6 +14,10 @@ TEST_F(TestDateTime, testing_constructir_fails){
     EXPECT_THROW(DateTime("1845"), DateTime::DateTimeInitializationException);
 }
 
+TEST_F(TestDateTime, testing_toString){
+    EXPECT_EQ("08:45", DateTime("08:45").toString());
+}
+
 TEST_F(TestDateTime, testing_lt){
     DateTime d1 = DateTime("18:45");
     DateTime d2 = DateTime("17:45");

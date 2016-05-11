@@ -12,7 +12,6 @@
 class Reception {
 
 private:
-    int linecount = 0;
     std::stringstream results;
     SET<Entry> s = SET<Entry>();
     Entry read(std::istream &f);
@@ -20,7 +19,7 @@ private:
 public:
     Reception(std::istream & instr);
     int nr_people_in(){return s.size();}
-    std::string wrong_entrys(){return results.str();}
+    std::string wrong_entrys(){return s.toString();}
 
 };
 

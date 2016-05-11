@@ -1,18 +1,6 @@
 10:30 Gipsz_Jakab 1234567A 10:45
 08:35 Gyanus_Moric 1x1x1x1x1x
-08:35 Gyanus_Moric 1x1x1x1x1x 08:10
-08:35 Gyanus_Moric 1x1x1x1x1x
-08:35 Gyanus_Moric 1x1x1x1x1x 08:10
-08:35 Gyanus_Moric 1x1x1x1x1x
+08:35 Gyanus_Moric 1x1x1x1x1x 08:45
+08:55 Gyanus_Moric 1x1x1x1x1x
 08:45 Szer_Elek 33332222
 08:45 Szer_Elek 33332222 09:15
-08:45 Szer_Elek 33332222 09:15
-20:15 csak_tavozo 45879 20:15
-20:15 csak_belepo 45872
-20:15 csak_belepo 45872
-14:15 valaki_mas 65465468
-14:15 valaki_mas 65465468 15:17
-14:15 valaki_mas 65465468
-10:15 hulye_gyerek 4444444
-10:15 hulye_gyerek 4444444 15:15
-10:15 hulye_gyerek 4444444 15:15
