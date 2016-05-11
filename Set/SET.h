@@ -67,7 +67,4 @@ class SET {
 };
 
 
-
-
-
 #endif //PROGRAMOZAS_ELSO_BEADANDO_SET_H
